@@ -1,4 +1,3 @@
-
 const fileForm         = document.getElementById('file-form');
 const fileInput        = document.getElementById('file-input');
 const submitButton     = document.getElementById('submit-button');
@@ -64,7 +63,7 @@ fileForm.addEventListener('submit', function(e){
 
   xhr.onload = function(){
     fileForm.reset();
-    submitButton.disabled = false; 
+    submitButton.disabled = false;
     setTimeout(function(){ messageContainer.textContent = xhr.responseText; }, 1000);
     setTimeout(function(){ messageContainer.textContent = ''; }, 3000);
   };
