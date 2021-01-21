@@ -48,10 +48,11 @@ fileForm.addEventListener('submit', function(e){
 
 
   xhr.upload.onloadend = function(e){
-    messageContainer.textContent = 'Upload completed!'; //Occurs very quickly before onload message below.
-    setTimeout(function(){                              //Demo only
+    setTimeout(function(){                                 //Demo only
+      messageContainer.textContent = 'Upload completed!'; //Occurs very quickly before onload message below.
+      progress.classList.add('visible');
       progressBar.style.width = '';
-    }, 2000);
+    }, 1000);
   };
 
 
