@@ -49,10 +49,9 @@ fileForm.addEventListener('submit', function(e){
 
   xhr.upload.onloadend = function(e){
     messageContainer.textContent = 'Upload completed!'; //Occurs very quickly before onload message below.
-    setTimeout(function(){                              //Let the progress bar be seen in it's finished state for a second.
-      progress.classList.remove('visible');
+    setTimeout(function(){                              //Demo only
       progressBar.style.width = '';
-    }, 1000);
+    }, 2000);
   };
 
 
@@ -62,9 +61,10 @@ fileForm.addEventListener('submit', function(e){
 
 
   xhr.onload = function(){
-    fileForm.reset();
-    submitButton.disabled = false;
-    setTimeout(function(){
+
+    setTimeout(function(){ //Demo only
+      fileForm.reset();
+      submitButton.disabled = false;
       messageContainer.textContent = xhr.responseText;
     }, 2000);
     setTimeout(function(){ messageContainer.textContent = ''; }, 3000);
