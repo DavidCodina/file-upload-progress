@@ -64,7 +64,9 @@ fileForm.addEventListener('submit', function(e){
   xhr.onload = function(){
     fileForm.reset();
     submitButton.disabled = false;
-    setTimeout(function(){ messageContainer.textContent = xhr.responseText; }, 1000);
+    setTimeout(function(){
+      messageContainer.textContent = xhr.responseText;
+    }, 2000);
     setTimeout(function(){ messageContainer.textContent = ''; }, 3000);
   };
 
@@ -75,7 +77,7 @@ fileForm.addEventListener('submit', function(e){
     console.log("There was an error.");
   };
 
-
-  xhr.open('POST', 'script.php', true);
+  //xhr.open('POST', 'script.php', true); //Actual php script.
+  xhr.open('POST', 'https://httpstat.us/201', true); //GitHub only
   xhr.send(formData);
 });
