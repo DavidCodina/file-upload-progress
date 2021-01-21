@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google" value="notranslate">
+  <title> - </title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+    crossorigin="anonymous"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+  <header id="primary-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#!">DavTek Industries</a>
+      </div>
+    </nav>
+
+    <h1 class="fancy-h1 mt-5">File Upload Progress</h1>
+  </header>
+
+
+  <!--  ========================================================================
+                                    main
+  ========================================================================== -->
+
+
+  <main class="py-5">
+    <div class="container-fluid px-md-5">
+
+
+      <p class="text-primary text-center"><strong>Note:</strong> The PHP file will
+      not get utilized on GitHub, but the overall demo still works.</p>
+
+
+      <form id="file-form" class="mx-auto mb-3 p-4 bg-white shadow">
+        <div class="mb-4">
+          <label for="file-input" class="form-label">Select a file:</label>
+          <input id="file-input"  class="form-control" name="test_file" type="file">
+        </div>
+
+        <button id="submit-button" class="btn btn-primary w-100">Submit</button>
+
+        <div id="progress" class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="background-color: rgb(72, 225, 72);"></div>
+        </div>
+      </form>
+
+
+      <div id="message-container" class="text-center"></div>
+    </div><!-- <div class="container"> -->
+  </main>
+
+
+  <!--  ========================================================================
+
+  ========================================================================== -->
+
+
+  <!-- <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"
+  ></script> -->
+
+
+  <script src="script.js"></script>
+</body>
+</html>
