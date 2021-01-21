@@ -47,13 +47,13 @@ fileForm.addEventListener('submit', function(e){
   };
 
 
-  xhr.upload.onloadend = function(e){
-    setTimeout(function(){                                 //Demo only
-      messageContainer.textContent = 'Upload completed!'; //Occurs very quickly before onload message below.
-      progress.classList.remove('visible');
-      progressBar.style.width = '';
-    }, 1000);
-  };
+  // xhr.upload.onloadend = function(e){
+  //   setTimeout(function(){                                 //Demo only
+  //     messageContainer.textContent = 'Upload completed!'; //Occurs very quickly before onload message below.
+  //     progress.classList.remove('visible');
+  //     progressBar.style.width = '';
+  //   }, 1000);
+  // };
 
 
   /* ===========================
@@ -64,18 +64,23 @@ fileForm.addEventListener('submit', function(e){
   xhr.onload = function(){
     setTimeout(function(){ //Demo only
       fileForm.reset();
-      submitButton.disabled = false;
+      submitButton.disabled        = false;
       messageContainer.textContent = xhr.responseText;
-    }, 2000);
-    setTimeout(function(){ messageContainer.textContent = ''; }, 3000);
+      progress.classList.remove('visible');
+      progressBar.style.width = '';
+    }, 1000);
+    setTimeout(function(){ messageContainer.textContent = ''; }, 2000);
   };
 
 
   xhr.onerror = function(){
     fileForm.reset();
-    submitButton.disabled = false; //Enable submit button.
-    console.log("There was an error.");
+    submitButton.disabled        = false; //Enable submit button.
+    messageContainer.textContent = "There was an error";
+    progress.classList.remove('visible');
+    progressBar.style.width = '';
   };
+  
 
   //xhr.open('POST', 'script.php', true); //Actual php script.
   xhr.open('POST', 'https://httpstat.us/201', true); //GitHub only
