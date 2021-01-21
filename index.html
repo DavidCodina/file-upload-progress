@@ -48,7 +48,12 @@
           <input id="file-input"  class="form-control" name="test_file" type="file">
         </div>
 
-        <button id="submit-button" class="btn btn-primary w-100">Submit</button>
+        <!-- <button id="submit-button" class="btn btn-primary w-100">Submit</button> -->
+
+        <button id="submit-button" class="btn btn-primary w-100">
+          <span id="submit-button-spinner" class="d-none spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span id="submit-button-text">Submit</span>
+        </button>
 
         <div id="progress" class="progress">
           <div class="progress-bar progress-bar-striped progress-bar-animated" style="background-color: rgb(72, 225, 72);"></div>
